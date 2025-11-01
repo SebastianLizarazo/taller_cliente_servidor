@@ -1,0 +1,177 @@
+# Datos de ejemplo para pruebas del sistema
+# Formato: cada línea representa una solicitud de registro
+
+# Equipos de Medición
+{
+  "accion": "registrar",
+  "codigo": "MM01",
+  "nombre": "Multímetro Fluke 87V",
+  "tipo": "Instrumento de medición",
+  "estado": "disponible"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "MM02",
+  "nombre": "Multímetro Digital UNI-T",
+  "tipo": "Instrumento de medición",
+  "estado": "disponible"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "OSC01",
+  "nombre": "Osciloscopio Tektronix TDS2014C",
+  "tipo": "Instrumento de medición",
+  "estado": "en uso"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "OSC02",
+  "nombre": "Osciloscopio Rigol DS1054Z",
+  "tipo": "Instrumento de medición",
+  "estado": "disponible"
+}
+
+# Equipos de Cómputo
+{
+  "accion": "registrar",
+  "codigo": "PC01",
+  "nombre": "Computador Dell OptiPlex 7080",
+  "tipo": "Equipo de cómputo",
+  "estado": "disponible"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "PC02",
+  "nombre": "Computador HP EliteDesk 800",
+  "tipo": "Equipo de cómputo",
+  "estado": "en uso"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "PC03",
+  "nombre": "Computador Lenovo ThinkCentre",
+  "tipo": "Equipo de cómputo",
+  "estado": "en mantenimiento"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "LAP01",
+  "nombre": "Laptop Dell Latitude 5420",
+  "tipo": "Equipo de cómputo",
+  "estado": "disponible"
+}
+
+# Sensores
+{
+  "accion": "registrar",
+  "codigo": "SENS01",
+  "nombre": "Sensor de Temperatura DHT22",
+  "tipo": "Sensor",
+  "estado": "disponible"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "SENS02",
+  "nombre": "Sensor Ultrasónico HC-SR04",
+  "tipo": "Sensor",
+  "estado": "disponible"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "SENS03",
+  "nombre": "Sensor de Humedad y Temperatura",
+  "tipo": "Sensor",
+  "estado": "en uso"
+}
+
+# Fuentes de Alimentación
+{
+  "accion": "registrar",
+  "codigo": "FTE01",
+  "nombre": "Fuente de Poder DC Regulable 30V/5A",
+  "tipo": "Fuente de alimentación",
+  "estado": "disponible"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "FTE02",
+  "nombre": "Fuente Triple Output Tekpower",
+  "tipo": "Fuente de alimentación",
+  "estado": "disponible"
+}
+
+# Generadores
+{
+  "accion": "registrar",
+  "codigo": "GEN01",
+  "nombre": "Generador de Funciones Siglent SDG1032X",
+  "tipo": "Generador de señales",
+  "estado": "disponible"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "GEN02",
+  "nombre": "Generador de RF Rigol DSG815",
+  "tipo": "Generador de señales",
+  "estado": "fuera de servicio"
+}
+
+# Kits y Módulos
+{
+  "accion": "registrar",
+  "codigo": "ARD01",
+  "nombre": "Kit Arduino UNO R3",
+  "tipo": "Kit de desarrollo",
+  "estado": "disponible"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "ARD02",
+  "nombre": "Kit Arduino Mega 2560",
+  "tipo": "Kit de desarrollo",
+  "estado": "disponible"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "RASP01",
+  "nombre": "Raspberry Pi 4 Model B 8GB",
+  "tipo": "Kit de desarrollo",
+  "estado": "en uso"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "ESP01",
+  "nombre": "Kit ESP32 DevKit",
+  "tipo": "Kit de desarrollo",
+  "estado": "disponible"
+}
+
+# Herramientas
+{
+  "accion": "registrar",
+  "codigo": "SOLD01",
+  "nombre": "Estación de Soldadura Digital Hakko",
+  "tipo": "Herramienta",
+  "estado": "disponible"
+}
+
+{
+  "accion": "registrar",
+  "codigo": "SOLD02",
+  "nombre": "Estación de Soldadura Weller",
+  "tipo": "Herramienta",
+  "estado": "en mantenimiento"
+}
