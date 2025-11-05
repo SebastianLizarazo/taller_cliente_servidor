@@ -1,8 +1,3 @@
-"""
-Cliente de Inventario de Equipos de Laboratorio
-Permite conectarse al servidor y realizar operaciones sobre el inventario
-"""
-
 import socket
 import json
 import sys
@@ -22,11 +17,11 @@ class ClienteInventario:
             return True
         except ConnectionRefusedError:
             print(
-                f"\n❌ Error: No se pudo conectar al servidor en {self.host}:{self.puerto}")
+                f"\nError: No se pudo conectar al servidor en {self.host}:{self.puerto}")
             print("Verifica que el servidor esté ejecutándose.")
             return False
         except Exception as e:
-            print(f"\n❌ Error al conectar: {e}")
+            print(f"\nError al conectar: {e}")
             return False
 
     def desconectar(self):
@@ -48,7 +43,7 @@ class ClienteInventario:
             return respuesta
 
         except Exception as e:
-            print(f"\n❌ Error en la comunicación: {e}")
+            print(f"\nError en la comunicación: {e}")
             return None
 
     def registrar_equipo(self):
@@ -92,11 +87,11 @@ class ClienteInventario:
         # Mostrar respuesta
         if respuesta:
             if respuesta['resultado'] == 'ok':
-                print(f"\n✅ {respuesta['mensaje']}")
+                print(f"\n{respuesta['mensaje']}")
                 if 'equipo' in respuesta:
                     self.mostrar_equipo(respuesta['equipo'])
             else:
-                print(f"\n❌ Error: {respuesta['mensaje']}")
+                print(f"\nError: {respuesta['mensaje']}")
 
     def consultar_equipos(self):
         """Consulta y muestra todos los equipos"""
@@ -116,14 +111,14 @@ class ClienteInventario:
                 equipos = respuesta.get('equipos', [])
 
                 if not equipos:
-                    print("\n📋 No hay equipos registrados en el inventario.")
+                    print("\nNo hay equipos registrados en el inventario.")
                 else:
-                    print(f"\n📋 {respuesta['mensaje']}\n")
+                    print(f"\n{respuesta['mensaje']}\n")
                     for i, equipo in enumerate(equipos, 1):
                         print(f"\n--- Equipo #{i} ---")
                         self.mostrar_equipo(equipo)
             else:
-                print(f"\n❌ Error: {respuesta['mensaje']}")
+                print(f"\nError: {respuesta['mensaje']}")
 
     def buscar_equipo(self):
         """Busca un equipo por código"""
@@ -145,10 +140,10 @@ class ClienteInventario:
         # Mostrar respuesta
         if respuesta:
             if respuesta['resultado'] == 'ok':
-                print(f"\n✅ {respuesta['mensaje']}\n")
+                print(f"\n{respuesta['mensaje']}\n")
                 self.mostrar_equipo(respuesta['equipo'])
             else:
-                print(f"\n❌ {respuesta['mensaje']}")
+                print(f"\n{respuesta['mensaje']}")
 
     def actualizar_estado(self):
         """Actualiza el estado de un equipo"""
@@ -187,11 +182,11 @@ class ClienteInventario:
         # Mostrar respuesta
         if respuesta:
             if respuesta['resultado'] == 'ok':
-                print(f"\n✅ {respuesta['mensaje']}")
+                print(f"\n{respuesta['mensaje']}")
                 if 'equipo' in respuesta:
                     self.mostrar_equipo(respuesta['equipo'])
             else:
-                print(f"\n❌ Error: {respuesta['mensaje']}")
+                print(f"\nError: {respuesta['mensaje']}")
 
     def mostrar_equipo(self, equipo):
         """Muestra la información de un equipo"""
@@ -226,7 +221,7 @@ class ClienteInventario:
         if not self.conectar():
             return
 
-        print(f"✅ Conectado exitosamente al servidor\n")
+        print(f"Conectado exitosamente al servidor\n")
 
         try:
             while True:
@@ -242,16 +237,16 @@ class ClienteInventario:
                 elif opcion == '4':
                     self.actualizar_estado()
                 elif opcion == '5':
-                    print("\n👋 Cerrando conexión con el servidor...")
+                    print("\nCerrando conexión con el servidor...")
                     break
                 else:
                     print(
-                        "\n⚠️  Opción no válida. Por favor, selecciona una opción del 1 al 5.")
+                        "\nOpción no válida. Por favor, selecciona una opción del 1 al 5.")
 
                 input("\nPresiona Enter para continuar...")
 
         except KeyboardInterrupt:
-            print("\n\n👋 Conexión interrumpida por el usuario.")
+            print("\n\nConexión interrumpida por el usuario.")
 
         finally:
             self.desconectar()
@@ -278,7 +273,7 @@ def main():
         try:
             puerto = int(puerto_str)
         except ValueError:
-            print("⚠️  Puerto inválido. Usando puerto 5555 por defecto.")
+            print("Puerto inválido. Usando puerto 5555 por defecto.")
             puerto = 5555
 
     # Crear y ejecutar cliente
