@@ -344,39 +344,3 @@ CLIENTE                     RED                      SERVIDOR
 └───────────────────────────────┘
 ```
 
-## 10. Timeline de una Sesión Completa
-
-```
-TIEMPO  CLIENTE                 SERVIDOR                ARCHIVO
-
-00:00   [Inicio]
-        python cliente.py       [Ya ejecutándose]       inventario.json
-                                                        [vacío o con datos]
-00:01   Conectar()
-        ────────────────────►   accept()
-                                crear_thread()
-
-00:02   [Usuario registra]
-        Solicitud JSON
-        ────────────────────►   recibir()
-                                validar()
-                                lock.acquire()
-                                inventario.append()     guardar() ──►
-                                lock.release()
-        ◄────────────────────   respuesta JSON
-        [Mostrar éxito]
-
-00:03   [Usuario consulta]
-        Solicitud JSON
-        ────────────────────►   recibir()
-                                lock.acquire()
-                                copiar inventario       leer() ────►
-                                lock.release()
-        ◄────────────────────   respuesta JSON
-        [Mostrar lista]
-
-00:04   [Usuario sale]
-        Desconectar()
-        ────────────────────►   cerrar conexión
-        [Fin]                   thread finaliza
-```

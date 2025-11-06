@@ -505,17 +505,4 @@ Para preguntas o problemas con el sistema, revisar:
 
 ---
 
-## Conclusiones
 
-Este sistema cumple con todos los requisitos especificados:
-
-- ✅ Arquitectura cliente-servidor
-- ✅ Comunicación por sockets
-- ✅ Múltiples clientes concurrentes
-- ✅ Persistencia en JSON
-- ✅ Operaciones CRUD completas
-- ✅ Validación y manejo de errores
-- ✅ Funcionamiento en red LAN
-- ✅ Código modular y mantenible
-
-El sistema está listo para ser desplegado y probado en el laboratorio.

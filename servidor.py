@@ -1,8 +1,3 @@
-"""
-Servidor de Inventario de Equipos de Laboratorio
-Maneja múltiples clientes concurrentes y mantiene persistencia en JSON
-"""
-
 import socket
 import threading
 import json
@@ -210,7 +205,7 @@ class ServidorInventario:
 
         try:
             while True:
-                # Recibir datos del cliente
+                # Recibir datos del cliente, hasta 4096 bytes
                 data = conn.recv(4096)
                 if not data:
                     break
